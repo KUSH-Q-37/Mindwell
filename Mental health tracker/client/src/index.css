@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lexend:wght@300;400;500;600&display=swap');
+
+:root {
+  /* High-End Obsidian Palette */
+  --bg-obsidian: #050505;
+  --card-background: #0a0a0b;
+  --card-border: #1a1a1c;
+  --accent-royal: #2563eb;
+  --accent-royal-glow: rgba(37, 99, 235, 0.4);
+  
+  /* Institutional Typography */
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  
+  /* Design Tokens */
+  --primary-color: var(--accent-royal);
+  --primary-light: #3b82f6;
+  --background-color: var(--bg-obsidian);
+  --text-color: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --border-color: var(--card-border);
+  
+  /* Gradients */
+  --wellness-gradient: linear-gradient(180deg, #1a1a1c 0%, #050505 100%);
+  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  
+  /* Transitions & Shadows */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px var(--accent-royal-glow);
+  
+  /* Layout */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-obsidian);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Global Utility Classes */
+.text-serif { font-family: var(--font-heading); }
+.text-royal { color: var(--accent-royal); }
+.bg-obsidian { background-color: var(--bg-obsidian); }
+
+.premium-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  transition: var(--transition-normal);
+}
+
+.premium-btn:hover {
+  background: var(--accent-royal);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* --- ACCESSIBILITY OVERRIDES --- */
+html {
+  font-size: calc(100% * var(--font-size-multiplier, 1));
+  line-height: var(--line-height, 1.6);
+}
+
+body.dyslexic-font * {
+  font-family: 'Lexend', sans-serif !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.1em !important;
+}
+
+body.reduced-motion *, 
+body.reduced-motion *::before, 
+body.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+body.high-contrast {
+  --bg-obsidian: #000000 !important;
+  --card-background: #000000 !important;
+  --card-border: #ffffff !important;
+  --text-color: #ffffff !important;
+  --text-secondary: #e2e8f0 !important;
+  --text-muted: #cbd5e1 !important;
+  --accent-royal: #60a5fa !important;
+}

@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumb.db
+
+# Node
+node_modules/
+dist/
+build/
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Python / ML
+__pycache__/
+ml-service/data/*.csv
+
+# Other
+.vscode/
+.idea/
